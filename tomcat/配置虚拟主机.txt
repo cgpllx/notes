@@ -1,0 +1,5 @@
+<host name="www.eugeneheen.com"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true">
+            <alias>eugeneheen.com</alias>
+            <alias>eugeneheen</alias>
+</host>
