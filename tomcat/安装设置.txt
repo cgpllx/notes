@@ -1,0 +1,8 @@
+http://www.cnblogs.com/mq0036/p/3864340.html
+
+
+http://blog.csdn.net/zhuying_linux/article/details/6583096/     linux下的安装
+
+
+启动  ./catalina.sh start
+停止  ./catalina.sh stop
