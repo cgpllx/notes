@@ -1,0 +1,8 @@
+git clone https://code.google.com/p/libs-for-android/
+https://github.com/VenomVendor/AutoNotifyViewPager.git
+git clone  https://github.com/feicien/android-auto-update.git
+git clone   https://github.com/longdw/MultiTaskDownloader.git
+git clone  https://github.com/arlyxiao/FileDownloaderManager.git
+git clone  https://github.com/logistic-infotech/Android-File-Download.git
+git clone https://github.com/petruchcho/FileDownloaderAndroid.git
+git clone https://github.com/maoqis/Mul-Download.git

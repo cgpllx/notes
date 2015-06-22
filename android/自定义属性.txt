@@ -1,0 +1,14 @@
+    <declare-styleable name="Topbar">
+        <attr name="title" format="string" />
+        <attr name="titleTextSize" format="dimension" />
+        <attr name="titleTextColor" format="color" />
+        <attr name="leftBackground" format="reference|color" />
+        <attr name="leftText" format="string" />
+        <attr name="lifeTextColor" format="color" />
+        <attr name="rightBackground" format="reference|color" />
+        <attr name="rightText" format="string" />
+        <attr name="rightTextColor" format="color" />
+    </declare-styleable>
+
+
+declare-styleable标签好像不能提示

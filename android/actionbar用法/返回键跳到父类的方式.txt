@@ -1,0 +1,40 @@
+1学习地址 http://blog.csdn.net/guolin_blog/article/details/18234477
+
+上图中的Conversation List是收件箱的主界面，现在我们点击第一封邮件会进入到Conversation1 details界面，然后点击下一封邮件会进入到Conversation 2 details界面，再点击下一封邮箱会进入到Conversation3 details界面。好的，这个时候如果我们按下Back键，应该会回到Conversation 2 details界面，再按一次Back键应该回到Conversation1 details界面，再按一次Back键才会回到Conversation List。而ActionBar导航则不应该表现出这种行为，无论我们当前在哪一个Conversation details界面，点击一下导航按钮都应该回到Conversation List界面才对。
+这就是ActionBar导航和Back键在设计上的区别，那么该怎样才能实现这样的功能呢？其实并不复杂，实现标准的ActionBar导航功能只需三步走。
+第一步我们已经实现了，就是调用setDisplayHomeAsUpEnabled()方法，并传入true。
+第二步需要在AndroidManifest.xml中配置父Activity，如下所示：
+[html] view plaincopy
+<activity  
+    android:name="com.example.actionbartest.MainActivity"  
+    android:logo="@drawable/weather" >  
+    <meta-data  
+        android:name="android.support.PARENT_ACTIVITY"  
+        android:value="com.example.actionbartest.LaunchActivity" />  
+</activity>  
+可以看到，这里通过meta-data标签指定了MainActivity的父Activity是LaunchActivity，在Android 4.1版本之后，也可以直接使用android:parentActivityName这个属性来进行指定，如下所示：
+[html] view plaincopy
+<activity  
+    android:name="com.example.actionbartest.MainActivity"  
+    android:logo="@drawable/weather"  
+    android:parentActivityName="com.example.actionbartest.LaunchActivity" >  
+</activity>  
+第三步则需要对android.R.id.home这个事件进行一些特殊处理，如下所示：
+[java] view plaincopy
+@Override  
+public boolean onOptionsItemSelected(MenuItem item) {  
+    switch (item.getItemId()) {  
+    case android.R.id.home:  
+        Intent upIntent = NavUtils.getParentActivityIntent(this);  
+        if (NavUtils.shouldUpRecreateTask(this, upIntent)) {  
+            TaskStackBuilder.create(this)  
+                    .addNextIntentWithParentStack(upIntent)  
+                    .startActivities();  
+        } else {  
+            upIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);  
+            NavUtils.navigateUpTo(this, upIntent);  
+        }  
+        return true;  
+        ......  
+    }  
+}  

@@ -1,0 +1,23 @@
+CountDownTimer
+
+类概述
+
+定时执行在一段时候后停止的倒计时，在倒计时执行过程中会在固定间隔时间得到通知（译者：触发onTick方法），下面的例子显示在一个文本框中显示一个30s倒计时：
+
+ new CountdownTimer(30000, 1000) {
+
+     public void onTick(long millisUntilFinished) {
+
+         mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
+
+     }
+
+     public void onFinish() {
+
+         mTextField.setText("done!");
+
+     }
+
+ }.start(); 
+
+onTick的调用是同步的，保证这次调用不会在之前调用完成前发生。这里的同步机制主要是用来：onTick的实现需要很多时间执行比倒计时间隔更重要的事情。

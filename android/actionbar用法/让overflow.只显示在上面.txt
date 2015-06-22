@@ -1,0 +1,25 @@
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	
+......
+	setOverflowShowingAlways();
+}
+
+
+private void setOverflowShowingAlways() {
+
+	try {
+		
+ViewConfiguration config = ViewConfiguration.get(this);
+	
+	Field menuKeyField = ViewConfiguration.class.getDeclaredField("sHasPermanentMenuKey");
+	
+	menuKeyField.setAccessible(true);
+	
+	menuKeyField.setBoolean(config, false);
+	} 
+catch (Exception e) {
+	
+	e.printStackTrace();
+	}
+}

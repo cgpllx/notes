@@ -1,0 +1,13 @@
+FileOutputStream fos = new FileOutputStream(entryFile);  
+BufferedOutputStream dest = new BufferedOutputStream(fos, BUFFER);  
+  
+// Write to new file.   
+while ((count = zis.read(data, 0, BUFFER)) != -1)  
+{  
+    dest.write(data, 0, count);  
+}  
+dest.flush();  
+// 关键是下面这句，强制将数据写入磁盘   
+FileDescriptor fd = fos.getFD();  
+fd.sync();  
+http://blog.itpub.net/28624388/viewspace-763524/

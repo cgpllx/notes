@@ -1,0 +1,29 @@
+svn 地址  svn://172.21.5.90/android
+账户 cgp
+密码  cgproot
+
+
+mysql 用户名 root
+密码 cgp888
+登录网站 https://portal.budgetvm.com/account/dashboard
+用户名cgpllx1@qq.com  密码cgp888
+后台 admin  cgp888
+
+ftp  198.98.102.167
+vpic_
+vpic_888
+
+putty  198.98.102.169
+  root   a_yhabaqyse-apub 
+EgU5ArU8
+
+
+
+wget 
+下载文件目录  /www/web/text   ftp ip 198.98.102.167  name    text mima
+
+text
+
+
+InetSocketAddress inetSocketAddress=new InetSocketAddress(InetAddress.getByAddress(ip),Util.bytesToInt(p))
+https://dl.google.com/android/ADT-23.0.4.zip

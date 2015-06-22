@@ -1,0 +1,14 @@
+adb shell monkey -p com.konka.music -v 500
+adb shell monkey -p com.qfang.home -v 500
+adb shell monkey -p com.android.qfangpalm -v 500
+com.qfang.qfangmobile
+
+ps命令  查找uiautomator的进程
+打开cmd命令行窗口
+输入：
+adb shell ps | grep monkey
+返回来的第一个数字，即是monkey的进程号
+3
+kill 命令结束进程继续输入:
+adb shell kill [刚才查到的进程号]
+同理结束其他进程，和其他应用也可用此法，屡试不爽

@@ -1,0 +1,8 @@
+keytool -genkey -v -keystore cgp.keystore -alias cgp.keystore -keyalg RSA -validity 50000
+				签名文件名称		别名			有效期（天）
+jarsigner -verbose -keystore cgp.keystore -signedjar notepad_signed.apk notepad.apk cgp.keystore
+
+jarsigner -verbose -keystore cgp.keystore -signedjar d:/card1.apk   d:/card.apk cgp.keystore
+							签名后的文件  需要签名的文件
+zipalign -v 4 d:/card1.apk d:/card1aligned.apk
+优化，

@@ -1,0 +1,5 @@
+	PopupMenu menu=new PopupMenu(getActivity(), v);
+		
+		getActivity().getMenuInflater().inflate(R.menu.main,menu.getMenu());
+
+		menu.show();

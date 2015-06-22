@@ -1,0 +1,3 @@
+ 
+在主线程中获取handle
+new Handler(Looper.getMainLooper())

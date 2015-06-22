@@ -1,0 +1,6 @@
+ContentObserver
+public void onChange(boolean selfChange, Uri uri)
+public void onChange(boolean selfChange)
+内容发生改变后，上面的方法会执行，第一个方法中有写手机无法收到改变通知，
+  htc     系统 4.0.3 
+摩托莫拉  系统 2.3.7

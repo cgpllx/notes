@@ -1,0 +1,12 @@
+
+自定义ViewGroup时候  onMeasure方法测量的作用
+java代码：
+int specMode = MeasureSpec.getMode(measureSpec);
+int specSize = MeasureSpec.getSize(measureSpec);
+
+依据specMode的值，（MeasureSpec有3种模式分别是UNSPECIFIED, EXACTLY和AT_MOST）
+如果是AT_MOST，specSize 代表的是最大可获得的空间；   wrap_content
+如果是EXACTLY，specSize 代表的是精确的尺寸；     fill_parent
+如果是UNSPECIFIED，对于控件尺寸来说，没有任何参考意义   这种情况不多，一般都是父控件是AdapterView，通过measure方法传入的模式。
+ 
+ 

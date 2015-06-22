@@ -1,0 +1,2 @@
+发送消息的方法   kadsever.java --> send()
+KadNet.java------>create()134行 启动线程

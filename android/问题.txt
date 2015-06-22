@@ -1,0 +1,8 @@
+下载了最新的ADT23.0.3，玛勒戈壁的，Window->References->Android 里面居然没有NDK，
+It's bull shit!!太狗血了，怎么办呢？
+1. Help->Install New Software... -> Work with 输入 http://dl-ssl.google.com/android/eclipse/
+2.本窗口中间的大框里会出现 Developer tools，点开，有一项Android Native Development Tools，勾上此项。
+3.本窗口下方的 Contact  all update sites during install....，去掉此项前面的勾。
+4.点Next就行了。若有提示就确定，一路下去。最后提示你重启Eclipse(ADT)。
+重启后发现 Window->References->Android 里面有NDK设置选项了。
+ 
