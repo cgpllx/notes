@@ -1,0 +1,2 @@
+1 直接放到eclipse中的plugins目录
+2 或者在dropins文件中新建一个plugins文件夹，然后将jar放到里面

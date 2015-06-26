@@ -1,0 +1,11 @@
+1，python 安装库 可以使用 easy_install去安装，win下面默认是没有安装easy_install，
+
+需要自己先安装easy_install(安装方法:
+wget -q http://peak.telecommunity.com/dist/ez_setup.py
+python ez_setup.py然后使用easy_install xxx执行要安装的库文件)
+(http://peak.telecommunity.com/dist/ez_setup.py运行这个地址就可以安装easy_install了)
+
+
+2，检测库是否安装 使用 import bencode(不报错就是安装成功了)
+
+http://www.jb51.net/article/34004.htm(安装说明)

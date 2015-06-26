@@ -1,0 +1,10 @@
+http://blog.csdn.net/sunguangran/article/details/6152236
+
+
+
+	public List<String> list = new LinkedList<String>();
+	public static void text() throws NoSuchFieldException, SecurityException {
+		ParameterizedType pt = (ParameterizedType) SearchText.class.getField("list").getGenericType();
+		System.out.println(pt.getActualTypeArguments().length);
+		System.out.println(pt.getActualTypeArguments()[0]);
+	}

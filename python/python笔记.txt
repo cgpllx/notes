@@ -1,0 +1,86 @@
+
+安装python差距方法 http://www.lfd.uci.edu/~gohlke/pythonlibs/
+数组定义 word=['a','b','c','d','e','f','g']
+访问数组的方法和java类似 
+a=word[2]   下标为2的元素
+ 
+b=word[1:3]  下标为1到2之间的元素(包括1不包括3)
+ 
+c=word[:2]  下标为0到2之间的元素(包括0不包括2)
+
+e=word[:2]+word[2:]  e也是一个数组
+
+f=word[-1]  f=g   说明(-1反问的是最后一个元素 ，也就是从后面往前面查询)
+
+g=word[-4:-2]   g=[d,e]  思想同上
+
+
+movies=['d','cc']
+movies.insert(1,1989) 制定位置插入一个
+movies.pop()
+movies.pop() 出栈最后一个
+movies.extend(["god is gril","roma love"])  合并一个列表
+movies.remove("roma love")  移除指定元素
+len(movies)是获取列表的长度
+if "god is girl" in movies:可以判断列表中是否有某个值 
+print movies
+
+for 循环 
+  for 目标标示符 in 列表 : 
+  列表处理代码 
+
+注意：python是一个很讲究缩进的程序语言，同级的列表处理代码一定要缩进方式相同。 
+
+>>> for movie in movies: 
+    print(movie); 
+**python的for循环很灵活，比如我用for data in open(filename)：这样data就是文件中每一行的内容，诸如此类的应用例子很多  ** 
+
+五、while循环 
+具体使用方式大概类似于for，相比之下，没有特殊操作，都用for 
+
+>>> 
+count = 0; 
+while count < len(movies): 
+...  print(movies[count]) 
+...  count=count+1 
+... 
+了不
+
+七、大小写 
+  python是敏感型语言，msg 和MSG是不同的对象 
+
+九、if 
+If 条件: 
+True处理代码 
+Else: 
+False处理代码 
+
+**注意，python中的True和False首字母要大写** 
+
+十、isinstance 
+  类似java的instanceof 
+  >>> isinstance(movies,list) 
+True 
+
+十一、BIF内建函数 
+
+比如有open() len() isinstance()等。 
+
+用这个命令去查看，dir(__builtins__) 
+
+列表中的东西可以用help命令去查看，比如 
+Help(isinstance) 
+
+十二、定义函数 
+def	函数名 (参数): 
+函数代码组 
+
+比如 
+>>> def printList (theList): 
+...   for obj in theList: 
+...     if(isinstance(obj,list)): 
+...       printList(obj) 
+...     else: 
+...       print(obj) 
+... 
+>>> printList(movies)

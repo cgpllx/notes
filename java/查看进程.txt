@@ -1,0 +1,1 @@
+进入cmd后,可以用tasklist查看当前正在运行的进程,比较有用的参数:tasklist /svc可以查看每个进程对应的系统服务,tasklist /m可以查看所有进程使用的模块.tasklist /m:XXX.dll可以查看哪个进程在使用XXX.dll文件

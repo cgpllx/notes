@@ -1,0 +1,8 @@
+1. 先找到你的工程中提供接口的类（要包含MAIN方法），
+2. 在该类中右键选择 RUN as
+3. 选择 Run configurations
+4. 在main窗口中选择main class为本类
+5. 点击RUN
+6. 选择你的工程，右键选择 EXPORT
+7. 在弹出的窗口中选择 runnable jar file
+8. 在弹出的 runnable jar file export窗口中第一个launch configuration 中选择你刚才配置的类， 第二个窗口中选择你要导出的路径9. 然后选择下一步就OK了

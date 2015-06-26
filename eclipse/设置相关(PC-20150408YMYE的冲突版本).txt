@@ -1,0 +1,2 @@
+preferences->java->code style->code template->Types
+preferences->Java->Code Style->Code Formatter->Show... £¬

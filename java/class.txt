@@ -1,0 +1,5 @@
+
+¿‡≤ø¿‡
+class.getCanonicalName ------com.qfang.text.Text.A
+class.getName ------com.qfang.text.Text$A
+

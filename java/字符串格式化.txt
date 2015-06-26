@@ -1,0 +1,5 @@
+字符串格式化  
+http://www.cnblogs.com/xytop/articles/1277125.html
+
+%1$s  替换为字符串
+%1$d  数组

@@ -1,0 +1,1 @@
+preferences->java->code style->code template->Types

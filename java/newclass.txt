@@ -1,0 +1,6 @@
+AtomicBoolean 在这个Boolean值的变化的时候不允许在之间插入，保持操作的原子性
+
+介绍 http://blog.csdn.net/xh16319/article/details/17056767
+
+
+AtomicInteger 中的incrementAndGet()方法可以加1，原则性的，比i++好用

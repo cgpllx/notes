@@ -1,0 +1,31 @@
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    String sourceStr1 = "啊啊啊啊";
+    String sourceStr2 = "哦哦哦哦哦哦哦哦哦哦";
+    byte[] sourceByte1 = sourceStr1.getBytes();
+    byte[] sourceByte2 = sourceStr2.getBytes();    
+    byte[] target = new byte[sourceByte1.length+sourceByte2.length];
+    System.out.println(new String(sourceByte1));
+    System.out.println(new String(sourceByte2));
+    int len = sourceByte1.length + sourceByte2.length;
+    System.arraycopy(sourceByte1, 0, target, 0, sourceByte1.length);
+    System.arraycopy(sourceByte2, 0, target, sourceByte1.length, sourceByte2.length);
+    System.out.println(new String(target));
+    //这里打印：啊啊啊啊哦哦哦哦哦哦哦哦哦哦
+}
+复制代码
+ 
+
+这里主要用到了System.arraycopy方法。
+
+System.arraycopy(src, srcPos, dest, destPos, length)
+
+src ： 源数组
+
+srcPos：源数组中的需要复制的起始位置
+
+dest：目标数组
+
+desPos：目标数组中需要复制到的起始位置
+
+length：需要复制源数组的长度

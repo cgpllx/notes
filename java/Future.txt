@@ -1,0 +1,49 @@
+boolean cancel (boolean mayInterruptIfRunning) 取消任务的执行。参数指定是否立即中断任务执行，或者等等任务结束
+boolean isCancelled () 任务是否已经取消，任务正常完成前将其取消，则返回 true
+boolean isDone () 任务是否已经完成。需要注意的是如果任务正常终止、异常或取消，都将返回true
+V get () throws InterruptedException, ExecutionException  等待任务执行结束，然后获得V类型的结果。
+InterruptedException 线程被中断异常， ExecutionException任务执行异常，如果任务被取消，还会抛出CancellationException
+V get (long timeout, TimeUnit unit) throws InterruptedException, ExecutionException,
+ TimeoutException 同上面的get功能一样，多了设置超时时间。参数timeout指定超时时间，
+uint指定时间的单位，在枚举类TimeUnit中有相关的定义。如果计算超时，将抛出TimeoutException
+
+ExecutorService executor = Executors.newSingleThreadExecutor();
+
+FutureTask<String> future =
+  new FutureTask<String>(new Callable<String>() {
+//使用Callable接口作为构造参数
+       
+ public String call() {
+           
+//真正的任务在这里执行，这里的返回值类型为String，可以为任意类型
+     
+  }});
+executor.execute(future)
+
+//在这里可以做别的任何事情
+try 
+{
+	
+result = future.get(5000, TimeUnit.MILLISECONDS);
+ //取得结果，同时设置超时执行时间为5秒。同样可以用future.get()，不设置执行超时时间取得结果
+} catch (InterruptedException e) {
+	futureTask.cancel(true);
+} catch (ExecutionException e) {
+	futureTask.cancel(true);
+} catch (TimeoutException e) {
+	futureTask.cancel(true);
+}
+ finally {
+	executor.shutdown();
+}
+
+
+//------------------------
+ExecutorService executor = Executors.newSingleThreadExecutor();
+FutureTask<String> future =　executor.submit(
+   new Callable<String>() {//使用Callable接口作为构造参数
+       public String call() {
+      //真正的任务在这里执行，这里的返回值类型为String，可以为任意类型
+   }});
+//在这里可以做别的任何事情
+//同上面取得结果的代码

@@ -1,0 +1,25 @@
+void CH31BTMgr::Encode_handshake()
+{
+	//a byte with value 19 (the length of the string that follows);
+	//the UTF-8 string "BitTorrent protocol" (which is the same as in ASCII);
+	//eight reserved bytes used to mark extensions;
+	//the 20 bytes of the torrent info hash;
+	//the 20 bytes of the peer ID.
+	char btname[256];
+	memset(btname,0,sizeof(btname));              讲btname 全部复制为0
+	sprintf(btname,"BitTorrent protocol");	 	将字符串拷贝到btname中
+	char msg[1280];					
+	memset(msg,0,sizeof(msg));			
+	msg[0]=19;
+	memcpy(&msg[1],btname,19);			将btname的19位拷贝到msg中（从1开始，）
+	char ext[8];
+	memset(ext,0,sizeof(ext));			同上
+	ext[5]=0x10;					
+
+	memcpy(&msg[20],ext,8);
+	memcpy(&msg[28],m_hash,20);
+	memcpy(&msg[48],m_peer_id,20);
+	int res1=Write(msg, 68);//TCP发送消息
+}
+在发送握手后,我们可以接着发送种子数据请求包,需要学习http://www.bittorrent.org/beps/bep_0009.html 里面的内容:
+

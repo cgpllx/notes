@@ -1,0 +1,19 @@
+第一种：
+
+<%
+
+out.println("<table><tr><td></td></tr></table>");
+
+%>
+
+ 
+
+第二种：
+
+由于content中的内容是以HTML形式存储的,所以在页面显示的时候,会将一些HTML标签原封不动的显示出来.查看页面的源代码,发现这些标签已经被解析成了转义符. 
+为了解决这个问题,在<c:out>标签中有一个escapeXml属性,其默认值为true,即默认是要将HTML标签转化为转义字符,所以在页面中就显示出了HTML标签. 
+所以,很显然,只要将这个属性值改为flase就可以了
+
+ 
+
+即<c:out value=" ${ content } "  escapeXml="false" />
