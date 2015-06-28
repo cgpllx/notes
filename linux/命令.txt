@@ -1,0 +1,69 @@
+下载  wget url
+解压  tar zxvf FileName.tar.gz（.tgz）
+
+
+删除  rm  filemane
+
+reboot 重启服务器
+
+mkdir /www/web/text/mongodb/data
+
+文件夹重命名 mv a  b
+
+
+运行程序 进入目录直接 文件名（如果不行前面加上./ ）如果还不行，使用全路径
+
+查看文件大小  ls- l
+
+台程序继续运行---使用 screen
+
+半个小时之后回来了，找到该screen会话：
+[root@tivf06 ~]# screen -ls
+There is a screen on:
+        16582.pts-1.tivf06      (Detached)
+1 Socket in /tmp/screens/S-root.
+重新连接会话：
+[root@tivf06 ~]# screen -r 16582
+
+vim命令  insert插入  :wq 保存退出   :q! 不保存退出
+
+
+wget URL is forbidden, 403 error
+wget  
+solution 1:
+
+wget -U firefox http://xxx.xxx.com/
+
+
+solution 2:
+
+1) using firefox and command netcat to check the header,
+ 
+2) wget -U xxx your.URL
+
+
+Ctrl +a  +c推出 screen窗口
+
+C-a ?	显示所有键绑定信息
+C-a w	显示所有窗口列表
+C-a C-a	切换到之前显示的窗口
+C-a c	创建一个新的运行shell的窗口并切换到该窗口
+C-a n	切换到下一个窗口
+C-a p	切换到前一个窗口(与C-a n相对)
+C-a 0..9	切换到窗口0..9
+C-a a	发送 C-a到当前窗口
+C-a d	暂时断开screen会话
+C-a k	杀掉当前窗口
+C-a [	进入拷贝/回滚模式
+
+　　第一步工作，肯定是先启动screen了。很简单，在linux命令行中输入：screen即可，就进入了screen环境。
+
+进入了就要退出，退出有两种方式，
+
+一个是完全退出，输入exit就是完全退出。
+
+另一个是Detached，CTRL-a+d（先按CTRL-a，然后按d字母），
+
+就可以Detached了。Detached是一种术语叫法。
+
+linux 杀死进程  kill -9 进程号

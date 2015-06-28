@@ -1,0 +1,5 @@
+http://jingyan.baidu.com/album/afd8f4de6ee5c734e286e999.html?picindex=4
+
+修改项目名称 在 window-p-Myeclipse-Web
+
+ 在、jsp中写java代码  <%=item.getName() %>这里是值   <% String s= %> ，这里声明
