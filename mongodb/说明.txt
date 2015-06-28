@@ -1,0 +1,3 @@
+解压后双击Installer.msi安装软件
+
+安装后将MongoVUE.exe文件覆盖到C:\Program Files\MongoVUE\MongoVUE 1.6.9\目录下即可

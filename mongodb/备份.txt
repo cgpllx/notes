@@ -1,0 +1,12 @@
+备份数据
+mongodump -h host -d dbname -o directory
+mongodump -h 127.0.0.1 -d test -c dht -o /data/bf
+h 主机
+d 表名
+c 集合名
+o 保存路径
+
+恢复数据
+mongorestore -h host -d dbname --directoryperdb dbdirectory 
+mongorestore -h 127.0.0.1 -d konka --directoryperdb /cloudpan/data/backup/konka
+mongorestore -h 127.0.0.1 -d konka /cloudpan/data/backup/konka --drop
